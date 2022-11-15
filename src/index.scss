@@ -1,0 +1,8 @@
+@use './vars';
+
+html, body {
+  background-color: vars.$color-primary;
+  color: vars.$color-secondary;
+  font-family: 'Comfortaa', cursive;
+  font-size: 16px;
+}
