@@ -9,7 +9,7 @@ To progress in my development skills.
 
 - Create React App
 - React-Query - _https://tanstack.com/query/v4_
-- React-Query DevTools - _https://tanstack.com/query/v4/docs/devtools_
+- React Router Dom - _https://v5.reactrouter.com/web/guides/quick-start_
 - Axios - _https://www.npmjs.com/package/axios_
 - Joy UI - _https://mui.com/joy-ui/getting-started/installation/_
 - SASS

@@ -1,14 +1,22 @@
+@use "../../vars.scss";
+
 .app {
 
     &-wrapper {
 
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         margin: 0 auto;
         width: fit-content;
         min-height: 100vh;
         font-size: 1.5em;
 
+    }
+
+    &-title {
+        font-size: 2rem;
+        color: vars.$color-secondary;
     }
 
 }

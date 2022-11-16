@@ -1,11 +1,20 @@
 // Import NPM
+import { Routes, Route  } from "react-router-dom";
 import { useQuery } from "react-query";
+import { useState } from "react";
 
 // Import Assets
 import { apiGeocoding } from "../../Hooks/apiGeocoding";
 import './styles.scss';
 
+// Import Components
+import About from '../About'
+import Dashboard from '../Dashboard';
+
 const App = () => {
+
+    const [zipcode, setZipcode] = useState();
+    const [cityName, setCitName] = useState();
 
     const apiKey = "c3b933db36214330f5baa93574803f1d"
 
@@ -22,14 +31,18 @@ const App = () => {
             () => apiGeocoding(geocodingByZip)
         );
 
-    console.log(geoCoding);
+    console.log("This is the city name :", cityName);
 
     return (
-    <>
-    <main className="app-wrapper">
-        Welcome to Pipz Weather Dashboard!
-    </main>
-    </>
+    <Routes>
+				<Route path="/" element= {
+					<Dashboard />
+				} />
+				<Route
+					path="/about"
+					element= {<About />}
+				/>
+    </Routes>
 
     )
     
