@@ -8,6 +8,7 @@ To progress in my development skills.
 ## Stack used for this dashbaord
 
 - Vite.js
+- React-Redux - _https://react-redux.js.org/introduction/getting-started_
 - React Router Dom - _https://v5.reactrouter.com/web/guides/quick-start_
 - Axios - _https://www.npmjs.com/package/axios_
 - Joy UI - _https://mui.com/joy-ui/getting-started/installation/_
