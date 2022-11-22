@@ -1,7 +1,8 @@
 @use './vars';
 
-html, body {
-  background-color: vars.$color-primary;
+body {
+  background: vars.$color-bg-primary,;
+  background: linear-gradient(45deg, vars.$color-bg-primary 0%, vars.$color-bg-secondary 100%);
   color: vars.$color-secondary;
   font-family: 'Comfortaa', cursive;
   font-size: 16px;
