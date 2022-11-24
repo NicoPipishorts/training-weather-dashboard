@@ -5,7 +5,8 @@ import { Routes, Route  } from "react-router-dom";
 import './styles.scss';
 
 // Import Components
-import About from '../About'
+import NavBar from '../NavBar'
+import Login from '../Login'
 import Dashboard from '../Dashboard';
 
 const App = () => {
@@ -14,12 +15,21 @@ const App = () => {
 	
 	<main className="app-wrapper">
 		<Routes>
-			<Route path="/" element= {
-					<Dashboard />
-			} />
+			<Route 
+        path="/" 
+        element= {
+          <Dashboard 
+            NavBar = {<NavBar />}
+          />
+			  } 
+      />
 			<Route
-					path="/about"
-					element= {<About />}
+				path="/login"
+				element= {
+          <Login 
+            NavBar = {<NavBar />}          
+          />
+        }
 			/>
 		</Routes>
 	</main>

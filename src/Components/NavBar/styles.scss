@@ -1,0 +1,46 @@
+@use "../../vars.scss";
+
+.navbar {
+
+  &-container {
+
+    position: absolute;
+    top: calc(vars.$gutter/1.5);
+    right: vars.$gutter;
+    display: flex;
+
+    ul {
+
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+
+      a {
+        text-decoration-line: none;
+      }
+
+      li {
+
+        margin: 0 vars.$spacing-500;
+        padding: vars.$spacing-200 vars.$spacing-500;
+        cursor: pointer;
+        color: vars.$color-secondary;
+
+        .selected {
+
+          box-shadow: 0 0 10px 10px rgba(vars.$color-primary, .5);
+
+        }
+
+      }
+
+      li:hover {
+
+        border-bottom: solid 2px vars.$color-secondary;
+
+      }
+
+    }
+      
+  }
+}

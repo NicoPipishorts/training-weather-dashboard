@@ -7,3 +7,34 @@ body {
   font-family: 'Comfortaa', cursive;
   font-size: 16px;
 }
+
+input {
+
+  margin-bottom: 1.5rem;
+  background: transparent;
+  border: 1px solid vars.$color-secondary;
+  border-radius: .4rem;
+  padding: vars.$spacing-500 vars.$spacing-600;
+  color: vars.$color-secondary;
+  font-size: 1.2rem;
+  font-weight: 100;
+  text-align: center;
+
+}
+
+input:focus {
+
+  outline: none;
+  
+}
+
+label {
+
+  display: block;
+  margin-bottom: vars.$spacing-200;
+  margin-left: vars.$spacing-300;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  text-transform: capitalize;
+  
+}
