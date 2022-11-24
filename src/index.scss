@@ -8,16 +8,25 @@ body {
   font-size: 16px;
 }
 
-input {
+form {
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.__form-elements {
+
+  box-sizing: border-box;
+  width: 30vw;
   margin-bottom: 1.5rem;
-  background: transparent;
+  background-color: transparent;
   border: 1px solid vars.$color-secondary;
   border-radius: .4rem;
   padding: vars.$spacing-500 vars.$spacing-600;
   color: vars.$color-secondary;
   font-size: 1.2rem;
-  font-weight: 100;
   text-align: center;
 
 }
@@ -28,13 +37,24 @@ input:focus {
   
 }
 
-label {
+.__form-buttons {
+
+  margin-top: 1rem;
+  padding: .6rem 1rem;
+  background-color: vars.$color-secondary;
+  color: vars.$color-primary;
+  cursor: pointer;
+
+}
+
+.__form-labels {
 
   display: block;
   margin-bottom: vars.$spacing-200;
   margin-left: vars.$spacing-300;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: lighter;
   text-transform: capitalize;
+  width: 30vw;
   
 }

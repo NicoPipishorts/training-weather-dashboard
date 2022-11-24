@@ -23,18 +23,20 @@ const SearchForm = () => {
 		<section className="dashboard__seach">
 		<h1 className="dashboard-title">Welcome to Pipz Weather Dashboard!</h1>
 	
-		<form>
+		<form className>
+      <label className="__form-labels">
+      City Name
+      </label>
 			<input 
 				type="text" 
-				className="dashboard__search--fields dashboard__search--input" 
-				placeholder="Search by City Name"
+				className="__form-elements dashboard__search--input" 
+				placeholder="City Name"
 				onChange={e => dispatch(setCityName(e.target.value))} 
 			/>
 			<button
 				type="submit"
 				value=" search"
-				className={`dashboard__search--fields dashboard__search--button ${ cityName ? "dashboard__search--button-active" : ""}`}
-				
+				className={`__form-elements __form-buttons dashboard__search--button ${ cityName ? "dashboard__search--button-active" : "dashboard__search--button-inactive"}`}				
 				onClick={handleSearch}
 			> search </button>
 		</form>

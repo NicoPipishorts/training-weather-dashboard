@@ -41,19 +41,23 @@
 
 		&--button {
 
-			margin-top: 1rem;
-			padding: .6rem 1rem;
-			opacity: 50%;
+			&-inactive {
+
+				padding: .5rem 1rem;
+				background-color: rgba(vars.$color-secondary, .2)!important;
+				font-weight: regular;
+				font-size: 1.4rem;
+				color: vars.$color-secondary!important;
+				cursor: pointer!important;
+
+			}
 
 			&-active {
 
-				opacity: 50%;
 				padding: .5rem 1rem;
-				background-color: vars.$color-secondary;
 				font-weight: 900;
 				font-size: 1.4rem;
 				color: vars.$color-primary;
-				cursor: pointer;
 
 			}
 
