@@ -3,24 +3,45 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ApiResource]
+#[ApiResource(
+    // operations: [
+    //     'user' => [
+    //         'pagination_enabled' => false,
+    //         'path' => '/user',
+    //         'method' => 'get',
+    //         'contorller' => UserController::class,
+    //         'read' => false
+
+    //     ]
+    // ],
+    normalizationContext: ['groups' => ['read:User']],
+    // operations: [
+    //     new Get()
+    // ]
+)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read:User'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Groups(['read:User'])]
     private ?string $username = null;
 
     #[ORM\Column]
+    #[Groups(['read:User'])]
     private array $roles = [];
 
     /**

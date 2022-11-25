@@ -1,9 +1,13 @@
 import {
-    SET_USER_INFO
+    SET_USER_TOKEN,
+    SET_LOGIN_INFO
 } from '../actions/users';
 
 export const initialState = {
     isLoading: false,
+    username: '',
+    password: '',
+    token: '',
     user: [],
 };
 
@@ -11,10 +15,16 @@ export const initialState = {
 const reducer = (state = initialState, action = {}) => {
     switch (action.type) {  
 
-        case SET_USER_INFO:
+        case SET_LOGIN_INFO:
             return {
                 ...state,
-                user: action.data,
+                [action.name]: action.value 
+            }
+
+        case SET_USER_TOKEN:
+            return {
+                ...state,
+                token: action.data,
             }
 
         default:

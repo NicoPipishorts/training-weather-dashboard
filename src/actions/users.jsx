@@ -14,10 +14,19 @@ export const userLogin = (value) => ({
     value,
 });
 
-// ACTION TYPE USER_LOGIN
-export const SET_USER_INFO = 'SET_USER_INFO';
-// ACTION CREATOR setUserInfo
-export const setUserInfo = (data) => ({
-    type: SET_USER_INFO,
+// ACTION TYPE SET_USER_INFO
+export const SET_USER_TOKEN = 'SET_USER_TOKEN';
+// ACTION CREATOR setUserToken
+export const setUserToken = (data) => ({
+    type: SET_USER_TOKEN,
     data,
+});
+
+// ACTION TYPE SET_LOGIN_INFO
+export const SET_LOGIN_INFO = 'SET_LOGIN_INFO';
+// ACTION CREATOR setLoginInfo
+export const setLoginInfo = (name, value) => ({
+    type: SET_LOGIN_INFO,
+    name,
+    value,
 });
