@@ -4,11 +4,16 @@ import {
 } from '../actions/users';
 
 export const initialState = {
-    isLoading: false,
+    isLoggedIn: false,
     username: '',
     password: '',
+    user: {
+        iat: '',
+        exp: '',
+        roles: [],
+        username: '',
+    },
     token: '',
-    user: [],
 };
 
 // A noter : pour le reducer userReducer, seule la tranche user est visible !
@@ -24,7 +29,9 @@ const reducer = (state = initialState, action = {}) => {
         case SET_USER_TOKEN:
             return {
                 ...state,
-                token: action.data,
+                isLoggedIn: true,
+                user: action.data,
+                token: action.token,
             }
 
         default:

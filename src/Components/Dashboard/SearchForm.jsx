@@ -8,25 +8,24 @@ import { setIsLoading, setCityName, searchByCityName } from "../../actions/searc
 
 const SearchForm = () => {
 
-  const dispatch = useDispatch();
-  const { zipcode, cityName } = useSelector((state) => state.search)
-  const results = useSelector((state) => state.search.results) || [];
+	const dispatch = useDispatch();
+	const { cityName } = useSelector((state) => state.search)
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    dispatch(setIsLoading(true))
-    dispatch(searchByCityName());
-  }
+	const handleSearch = (e) => {
+	e.preventDefault();
+	dispatch(setIsLoading(true))
+	dispatch(searchByCityName());
+	}
 
 	return (
 
 		<section className="dashboard__seach">
 		<h1 className="dashboard-title">Welcome to Pipz Weather Dashboard!</h1>
-	
+
 		<form className>
-      <label className="__form-labels">
-      City Name
-      </label>
+		<label className="__form-labels">
+		City Name
+		</label>
 			<input 
 				type="text" 
 				className="__form-elements dashboard__search--input" 
@@ -40,10 +39,10 @@ const SearchForm = () => {
 				onClick={handleSearch}
 			> search </button>
 		</form>
-	
+
 		</section>
 
-	)
+	)	
 
 }
 

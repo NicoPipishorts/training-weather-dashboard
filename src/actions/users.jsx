@@ -6,6 +6,14 @@ export const setIsLoading = (value) => ({
     value,
 });
 
+// ACTION TYPE USER_GET_INFO
+export const USER_GET_INFO = 'USER_GET_INFO';
+// ACTION CREATOR userGetInfo
+export const userGetInfo = (value) => ({
+    type: USER_GET_INFO,
+    value,
+});
+
 // ACTION TYPE USER_LOGIN
 export const USER_LOGIN = 'USER_LOGIN';
 // ACTION CREATOR userLogin
@@ -17,9 +25,10 @@ export const userLogin = (value) => ({
 // ACTION TYPE SET_USER_INFO
 export const SET_USER_TOKEN = 'SET_USER_TOKEN';
 // ACTION CREATOR setUserToken
-export const setUserToken = (data) => ({
+export const setUserToken = (data, token) => ({
     type: SET_USER_TOKEN,
     data,
+    token
 });
 
 // ACTION TYPE SET_LOGIN_INFO

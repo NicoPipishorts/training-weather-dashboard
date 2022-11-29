@@ -1,5 +1,5 @@
 // Import NPM
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Import Components
 
@@ -10,6 +10,9 @@ import "./styles.scss";
 const Login = ( {NavBar } ) => {
 
   const dispatch = useDispatch();
+
+  const isLoggedIn = useSelector((state) => state.users.isLoggedIn);
+  const userName = useSelector((state) => state.users.user.username);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,6 +25,7 @@ const Login = ( {NavBar } ) => {
   
     { NavBar }
     
+    {!isLoggedIn && (
     <section className="login-container">
       
       <h1 className="login-title">Login</h1>
@@ -55,6 +59,14 @@ const Login = ( {NavBar } ) => {
       </form>
 
     </section>
+  
+  )}
+
+  {isLoggedIn && (
+    <>
+    <h1>Welecome {userName} </h1>
+    </>
+  )}
   
   </>
     
