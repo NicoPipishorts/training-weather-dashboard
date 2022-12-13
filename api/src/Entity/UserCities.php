@@ -2,6 +2,11 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\UserCitiesRepository;
 use Doctrine\DBAL\Types\Types;
@@ -10,10 +15,18 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: UserCitiesRepository::class)]
 #[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection(),
+        new Post(),
+    ],
     normalizationContext: ['groups' => 
         ['read:UserCities', 'write:UserCities']
     ],
 )]
+#[ApiFilter(
+    SearchFilter::class, properties: ['user' => 'exact'])
+]
 class UserCities
 {
     #[ORM\Id]
@@ -34,7 +47,7 @@ class UserCities
     #[Groups(['read:UserCities', 'read:User'])]
     private ?string $longitude = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Groups(['read:UserCities'])]
     private ?\DateTimeInterface $dateAdded = null;
 
